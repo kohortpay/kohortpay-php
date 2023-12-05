@@ -7,7 +7,7 @@ management:
 generation:
   comments: {}
   sdkClassName: kohortPay
-  repoURL: https://github.com/kohortpay/kohortpay-php.git
+  repoURL: https://github.com/kohortpay/kohortpay-node.git
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
