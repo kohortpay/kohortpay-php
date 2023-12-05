@@ -108,9 +108,7 @@ You can override the default server globally by passing a server index to the `s
 
 | # | Server | Variables |
 | - | ------ | --------- |
-| 0 | `https://api.kohortpay.dev` | None |
-| 1 | `http://localhost:3000/` | None |
-| 2 | `https://api.kohortpay.com` | None |
+| 0 | `https://api.kohortpay.com` | None |
 
 
 

@@ -84,10 +84,6 @@ namespace kohortpay\sdk;
 class KohortPay
 {
 	public const SERVERS = [
-        /** staging */
-		'https://api.kohortpay.dev',
-        /** Development */
-		'http://localhost:3000/',
         /** Production */
 		'https://api.kohortpay.com',
 	];
