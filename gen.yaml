@@ -1,13 +1,13 @@
 configVersion: 1.0.0
 management:
-  docChecksum: f6189af07b544d6152f18673d7790265
+  docChecksum: b9c3a1dbf786d9a6f72d980701876175
   docVersion: 0.1.0
   speakeasyVersion: 1.125.1
   generationVersion: 2.210.3
 generation:
   comments: {}
   sdkClassName: kohortPay
-  repoURL: https://github.com/kohortpay/kohortpay-node.git
+  repoURL: https://github.com/kohortpay/kohortpay-php.git
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
@@ -19,7 +19,7 @@ features:
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.0
 php:
-  version: 0.1.3
+  version: 0.1.4
   imports:
     option: openapi
     paths:
