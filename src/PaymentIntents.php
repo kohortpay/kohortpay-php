@@ -24,10 +24,10 @@ class PaymentIntents
     /**
      * Retrieve all Payment Intents
      * 
-     * @return \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindAllResponse
+     * @return \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse
      */
-	public function paymentIntentsControllerFindAll(
-    ): \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindAllResponse
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents');
@@ -42,7 +42,7 @@ class PaymentIntents
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindAllResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -57,11 +57,11 @@ class PaymentIntents
      * Create a new Payment Intent
      * 
      * @param \kohortpay\sdk\Models\Components\CreatePaymentIntentDto $request
-     * @return \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCreateResponse
+     * @return \kohortpay\sdk\Models\Operations\CreatePaymentIntentResponse
      */
-	public function paymentIntentsControllerCreate(
+	public function create(
         \kohortpay\sdk\Models\Components\CreatePaymentIntentDto $request,
-    ): \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCreateResponse
+    ): \kohortpay\sdk\Models\Operations\CreatePaymentIntentResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents');
@@ -81,7 +81,7 @@ class PaymentIntents
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCreateResponse();
+        $response = new \kohortpay\sdk\Models\Operations\CreatePaymentIntentResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -102,17 +102,17 @@ class PaymentIntents
      * Retrieve a Payment Intent by ID
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindOneResponse
+     * @return \kohortpay\sdk\Models\Operations\FindOnePaymentIntentResponse
      */
-	public function paymentIntentsControllerFindOne(
+	public function findOne(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindOneResponse
+    ): \kohortpay\sdk\Models\Operations\FindOnePaymentIntentResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindOneRequest();
+        $request = new \kohortpay\sdk\Models\Operations\FindOnePaymentIntentRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents/{id}', \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindOneRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents/{id}', \kohortpay\sdk\Models\Operations\FindOnePaymentIntentRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -124,7 +124,7 @@ class PaymentIntents
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindOneResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindOnePaymentIntentResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -138,20 +138,20 @@ class PaymentIntents
     /**
      * Cancel a Payment Intent by ID
      * 
-     * @param \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelSecurity $security
+     * @param \kohortpay\sdk\Models\Operations\CancelPaymentIntentSecurity $security
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelResponse
+     * @return \kohortpay\sdk\Models\Operations\CancelPaymentIntentResponse
      */
-	public function paymentIntentsControllerCancel(
-        \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelSecurity $security,
+	public function cancel(
+        \kohortpay\sdk\Models\Operations\CancelPaymentIntentSecurity $security,
         string $id,
-    ): \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelResponse
+    ): \kohortpay\sdk\Models\Operations\CancelPaymentIntentResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelRequest();
+        $request = new \kohortpay\sdk\Models\Operations\CancelPaymentIntentRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents/{id}/cancel', \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents/{id}/cancel', \kohortpay\sdk\Models\Operations\CancelPaymentIntentRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -164,7 +164,7 @@ class PaymentIntents
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelResponse();
+        $response = new \kohortpay\sdk\Models\Operations\CancelPaymentIntentResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

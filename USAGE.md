@@ -16,7 +16,7 @@ $sdk = sdk\KohortPay::builder()
     ->build();
 
 try {
-    $response = $sdk->paymentIntents->paymentIntentsControllerFindAll();
+    $response = $sdk->paymentIntents->findAll();
 
     if ($response->statusCode === 200) {
         // handle response

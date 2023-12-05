@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [paymentIntentsControllerFindAll](#paymentintentscontrollerfindall) - Retrieve all Payment Intents
-* [paymentIntentsControllerCreate](#paymentintentscontrollercreate) - Create a new Payment Intent
-* [paymentIntentsControllerFindOne](#paymentintentscontrollerfindone) - Retrieve a Payment Intent by ID
-* [paymentIntentsControllerCancel](#paymentintentscontrollercancel) - Cancel a Payment Intent by ID
+* [findAll](#findall) - Retrieve all Payment Intents
+* [create](#create) - Create a new Payment Intent
+* [findOne](#findone) - Retrieve a Payment Intent by ID
+* [cancel](#cancel) - Cancel a Payment Intent by ID
 
-## paymentIntentsControllerFindAll
+## findAll
 
 Retrieve all Payment Intents
 
@@ -29,7 +29,7 @@ $security->bearer = '';
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
 try {
-    $response = $sdk->paymentIntents->paymentIntentsControllerFindAll();
+    $response = $sdk->paymentIntents->findAll();
 
     if ($response->statusCode === 200) {
         // handle response
@@ -42,10 +42,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindAllResponse](../../Models/Operations/PaymentIntentsControllerFindAllResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse](../../Models/Operations/FindAllPaymentIntentsResponse.md)**
 
 
-## paymentIntentsControllerCreate
+## create
 
 Create a new Payment Intent
 
@@ -73,7 +73,7 @@ try {
     $request->metadata = new Components\Metadata();
     $request->status = Components\Status::RequiresPaymentMethod;;
 
-    $response = $sdk->paymentIntents->paymentIntentsControllerCreate($request);
+    $response = $sdk->paymentIntents->create($request);
 
     if ($response->createPaymentIntentDto !== null) {
         // handle response
@@ -92,10 +92,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentIntentsControllerCreateResponse](../../Models/Operations/PaymentIntentsControllerCreateResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\CreatePaymentIntentResponse](../../Models/Operations/CreatePaymentIntentResponse.md)**
 
 
-## paymentIntentsControllerFindOne
+## findOne
 
 Retrieve a Payment Intent by ID
 
@@ -119,7 +119,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentIntents->paymentIntentsControllerFindOne('string');
+    $response = $sdk->paymentIntents->findOne('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -138,10 +138,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentIntentsControllerFindOneResponse](../../Models/Operations/PaymentIntentsControllerFindOneResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindOnePaymentIntentResponse](../../Models/Operations/FindOnePaymentIntentResponse.md)**
 
 
-## paymentIntentsControllerCancel
+## cancel
 
 Cancel a Payment Intent by ID
 
@@ -162,10 +162,10 @@ $sdk = sdk\KohortPay::builder()->build();
 try {
     
 
-    $requestSecurity = new Operations\PaymentIntentsControllerCancelSecurity();
+    $requestSecurity = new Operations\CancelPaymentIntentSecurity();
     $requestSecurity->bearer = '';
 
-    $response = $sdk->paymentIntents->paymentIntentsControllerCancel($requestSecurity, 'string');
+    $response = $sdk->paymentIntents->cancel($requestSecurity, 'string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -177,13 +177,13 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                                                    | Type                                                                                                                                         | Required                                                                                                                                     | Description                                                                                                                                  |
-| -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                                   | [\kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelSecurity](../../Models/Operations/PaymentIntentsControllerCancelSecurity.md) | :heavy_check_mark:                                                                                                                           | The security requirements to use for the request.                                                                                            |
-| `id`                                                                                                                                         | *string*                                                                                                                                     | :heavy_check_mark:                                                                                                                           | ID of the Payment Intent to cancel                                                                                                           |
+| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                             | [\kohortpay\sdk\Models\Operations\CancelPaymentIntentSecurity](../../Models/Operations/CancelPaymentIntentSecurity.md) | :heavy_check_mark:                                                                                                     | The security requirements to use for the request.                                                                      |
+| `id`                                                                                                                   | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | ID of the Payment Intent to cancel                                                                                     |
 
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentIntentsControllerCancelResponse](../../Models/Operations/PaymentIntentsControllerCancelResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\CancelPaymentIntentResponse](../../Models/Operations/CancelPaymentIntentResponse.md)**
 

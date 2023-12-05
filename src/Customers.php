@@ -24,10 +24,12 @@ class Customers
     /**
      * find All customers of an organization.
      * 
-     * @return \kohortpay\sdk\Models\Operations\CustomersControllerFindAllResponse
+     * find All customers of an organization.
+     * 
+     * @return \kohortpay\sdk\Models\Operations\FindAllCustomersResponse
      */
-	public function customersControllerFindAll(
-    ): \kohortpay\sdk\Models\Operations\CustomersControllerFindAllResponse
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllCustomersResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers');
@@ -42,7 +44,7 @@ class Customers
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CustomersControllerFindAllResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindAllCustomersResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -59,11 +61,11 @@ class Customers
      * Create a new customer.
      * 
      * @param \kohortpay\sdk\Models\Components\CreateCustomerDto $request
-     * @return \kohortpay\sdk\Models\Operations\CustomersControllerCreateResponse
+     * @return \kohortpay\sdk\Models\Operations\CreateCustomerResponse
      */
-	public function customersControllerCreate(
+	public function create(
         \kohortpay\sdk\Models\Components\CreateCustomerDto $request,
-    ): \kohortpay\sdk\Models\Operations\CustomersControllerCreateResponse
+    ): \kohortpay\sdk\Models\Operations\CreateCustomerResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/customers');
@@ -83,7 +85,7 @@ class Customers
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CustomersControllerCreateResponse();
+        $response = new \kohortpay\sdk\Models\Operations\CreateCustomerResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -95,20 +97,22 @@ class Customers
     }
 	
     /**
-     * customersControllerRemove
+     * Delete a customer.
+     * 
+     * Delete a customer.
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\CustomersControllerRemoveResponse
+     * @return \kohortpay\sdk\Models\Operations\DeleteCustomerResponse
      */
-	public function customersControllerRemove(
+	public function delete(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\CustomersControllerRemoveResponse
+    ): \kohortpay\sdk\Models\Operations\DeleteCustomerResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\CustomersControllerRemoveRequest();
+        $request = new \kohortpay\sdk\Models\Operations\DeleteCustomerRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\CustomersControllerRemoveRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\DeleteCustomerRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -120,7 +124,7 @@ class Customers
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CustomersControllerRemoveResponse();
+        $response = new \kohortpay\sdk\Models\Operations\DeleteCustomerResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -134,18 +138,20 @@ class Customers
     /**
      * find All customers of an organization.
      * 
+     * find All customers of an organization.
+     * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\CustomersControllerFindOneResponse
+     * @return \kohortpay\sdk\Models\Operations\FindOneCustomerResponse
      */
-	public function customersControllerFindOne(
+	public function findOne(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\CustomersControllerFindOneResponse
+    ): \kohortpay\sdk\Models\Operations\FindOneCustomerResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\CustomersControllerFindOneRequest();
+        $request = new \kohortpay\sdk\Models\Operations\FindOneCustomerRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\CustomersControllerFindOneRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\FindOneCustomerRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -157,7 +163,7 @@ class Customers
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CustomersControllerFindOneResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindOneCustomerResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -169,23 +175,25 @@ class Customers
     }
 	
     /**
-     * customersControllerUpdate
+     * Update a customer.
+     * 
+     * Update a customer.
      * 
      * @param string $id
      * @param \kohortpay\sdk\Models\Components\UpdateCustomerDto $updateCustomerDto
-     * @return \kohortpay\sdk\Models\Operations\CustomersControllerUpdateResponse
+     * @return \kohortpay\sdk\Models\Operations\UpdateCustomerResponse
      */
-	public function customersControllerUpdate(
+	public function updateCustomer(
         string $id,
         \kohortpay\sdk\Models\Components\UpdateCustomerDto $updateCustomerDto,
-    ): \kohortpay\sdk\Models\Operations\CustomersControllerUpdateResponse
+    ): \kohortpay\sdk\Models\Operations\UpdateCustomerResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\CustomersControllerUpdateRequest();
+        $request = new \kohortpay\sdk\Models\Operations\UpdateCustomerRequest();
         $request->id = $id;
         $request->updateCustomerDto = $updateCustomerDto;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\CustomersControllerUpdateRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\UpdateCustomerRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "updateCustomerDto", "json");
@@ -202,7 +210,7 @@ class Customers
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CustomersControllerUpdateResponse();
+        $response = new \kohortpay\sdk\Models\Operations\UpdateCustomerResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

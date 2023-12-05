@@ -3,13 +3,13 @@
 
 ### Available Operations
 
-* [customersControllerFindAll](#customerscontrollerfindall) - find All customers of an organization.
-* [customersControllerCreate](#customerscontrollercreate) - Create a new customer.
-* [customersControllerRemove](#customerscontrollerremove)
-* [customersControllerFindOne](#customerscontrollerfindone) - find All customers of an organization.
-* [customersControllerUpdate](#customerscontrollerupdate)
+* [findAll](#findall) - find All customers of an organization.
+* [create](#create) - Create a new customer.
+* [delete](#delete) - Delete a customer.
+* [findOne](#findone) - find All customers of an organization.
+* [updateCustomer](#updatecustomer) - Update a customer.
 
-## customersControllerFindAll
+## findAll
 
 find All customers of an organization.
 
@@ -30,7 +30,7 @@ $security->bearer = '';
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
 try {
-    $response = $sdk->customers->customersControllerFindAll();
+    $response = $sdk->customers->findAll();
 
     if ($response->statusCode === 200) {
         // handle response
@@ -43,10 +43,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CustomersControllerFindAllResponse](../../Models/Operations/CustomersControllerFindAllResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindAllCustomersResponse](../../Models/Operations/FindAllCustomersResponse.md)**
 
 
-## customersControllerCreate
+## create
 
 Create a new customer.
 
@@ -88,7 +88,7 @@ try {
     $request->shippingAddress->state = 'Île-de-France';
     $request->metadata = new Components\CreateCustomerDtoMetadata();;
 
-    $response = $sdk->customers->customersControllerCreate($request);
+    $response = $sdk->customers->create($request);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -107,10 +107,12 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CustomersControllerCreateResponse](../../Models/Operations/CustomersControllerCreateResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\CreateCustomerResponse](../../Models/Operations/CreateCustomerResponse.md)**
 
 
-## customersControllerRemove
+## delete
+
+Delete a customer.
 
 ### Example Usage
 
@@ -132,7 +134,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->customers->customersControllerRemove('string');
+    $response = $sdk->customers->delete('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -151,10 +153,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CustomersControllerRemoveResponse](../../Models/Operations/CustomersControllerRemoveResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\DeleteCustomerResponse](../../Models/Operations/DeleteCustomerResponse.md)**
 
 
-## customersControllerFindOne
+## findOne
 
 find All customers of an organization.
 
@@ -178,7 +180,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->customers->customersControllerFindOne('string');
+    $response = $sdk->customers->findOne('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -197,10 +199,12 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CustomersControllerFindOneResponse](../../Models/Operations/CustomersControllerFindOneResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindOneCustomerResponse](../../Models/Operations/FindOneCustomerResponse.md)**
 
 
-## customersControllerUpdate
+## updateCustomer
+
+Update a customer.
 
 ### Example Usage
 
@@ -223,7 +227,7 @@ try {
         $updateCustomerDto = new Components\UpdateCustomerDto();
     $updateCustomerDto->deletedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2021-07-22T00:00:00.000Z');
 
-    $response = $sdk->customers->customersControllerUpdate('string', $updateCustomerDto);
+    $response = $sdk->customers->updateCustomer('string', $updateCustomerDto);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -243,5 +247,5 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CustomersControllerUpdateResponse](../../Models/Operations/CustomersControllerUpdateResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\UpdateCustomerResponse](../../Models/Operations/UpdateCustomerResponse.md)**
 

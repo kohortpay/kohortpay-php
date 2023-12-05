@@ -24,10 +24,10 @@ class PaymentGroups
     /**
      * Retrieve all payment groups
      * 
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindAllResponse
+     * @return \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse
      */
-	public function paymentGroupsControllerFindAll(
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindAllResponse
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups');
@@ -42,7 +42,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindAllResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -57,11 +57,11 @@ class PaymentGroups
      * Create a new payment group
      * 
      * @param \kohortpay\sdk\Models\Components\CreatePaymentGroupDto $request
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCreateResponse
+     * @return \kohortpay\sdk\Models\Operations\CreatePaymentGroupResponse
      */
-	public function paymentGroupsControllerCreate(
+	public function create(
         \kohortpay\sdk\Models\Components\CreatePaymentGroupDto $request,
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCreateResponse
+    ): \kohortpay\sdk\Models\Operations\CreatePaymentGroupResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups');
@@ -81,7 +81,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCreateResponse();
+        $response = new \kohortpay\sdk\Models\Operations\CreatePaymentGroupResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -96,17 +96,17 @@ class PaymentGroups
      * Retrieve a payment group by id
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindOneResponse
+     * @return \kohortpay\sdk\Models\Operations\FindOnePaymentGroupResponse
      */
-	public function paymentGroupsControllerFindOne(
+	public function findOne(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindOneResponse
+    ): \kohortpay\sdk\Models\Operations\FindOnePaymentGroupResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindOneRequest();
+        $request = new \kohortpay\sdk\Models\Operations\FindOnePaymentGroupRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}', \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindOneRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}', \kohortpay\sdk\Models\Operations\FindOnePaymentGroupRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -118,7 +118,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindOneResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindOnePaymentGroupResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -134,19 +134,19 @@ class PaymentGroups
      * 
      * @param string $id
      * @param \kohortpay\sdk\Models\Components\UpdatePaymentGroupDto $updatePaymentGroupDto
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerUpdateResponse
+     * @return \kohortpay\sdk\Models\Operations\UpdateResponse
      */
-	public function paymentGroupsControllerUpdate(
+	public function update(
         string $id,
         \kohortpay\sdk\Models\Components\UpdatePaymentGroupDto $updatePaymentGroupDto,
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerUpdateResponse
+    ): \kohortpay\sdk\Models\Operations\UpdateResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerUpdateRequest();
+        $request = new \kohortpay\sdk\Models\Operations\UpdateRequest();
         $request->id = $id;
         $request->updatePaymentGroupDto = $updatePaymentGroupDto;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}', \kohortpay\sdk\Models\Operations\PaymentGroupsControllerUpdateRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}', \kohortpay\sdk\Models\Operations\UpdateRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "updatePaymentGroupDto", "json");
@@ -163,7 +163,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerUpdateResponse();
+        $response = new \kohortpay\sdk\Models\Operations\UpdateResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -178,17 +178,17 @@ class PaymentGroups
      * Retrieve participants of a payment group by id
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerParticipantsResponse
+     * @return \kohortpay\sdk\Models\Operations\GetParticipantsResponse
      */
-	public function paymentGroupsControllerParticipants(
+	public function getParticipants(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerParticipantsResponse
+    ): \kohortpay\sdk\Models\Operations\GetParticipantsResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerParticipantsRequest();
+        $request = new \kohortpay\sdk\Models\Operations\GetParticipantsRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/participants', \kohortpay\sdk\Models\Operations\PaymentGroupsControllerParticipantsRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/participants', \kohortpay\sdk\Models\Operations\GetParticipantsRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -200,7 +200,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerParticipantsResponse();
+        $response = new \kohortpay\sdk\Models\Operations\GetParticipantsResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -215,17 +215,17 @@ class PaymentGroups
      * Cancel a payment group by id
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCancelResponse
+     * @return \kohortpay\sdk\Models\Operations\CancelPaymentGroupResponse
      */
-	public function paymentGroupsControllerCancel(
+	public function cancel(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCancelResponse
+    ): \kohortpay\sdk\Models\Operations\CancelPaymentGroupResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCancelRequest();
+        $request = new \kohortpay\sdk\Models\Operations\CancelPaymentGroupRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/cancel', \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCancelRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/cancel', \kohortpay\sdk\Models\Operations\CancelPaymentGroupRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -237,7 +237,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerCancelResponse();
+        $response = new \kohortpay\sdk\Models\Operations\CancelPaymentGroupResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -252,17 +252,17 @@ class PaymentGroups
      * Expire a payment group by id
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerExpireResponse
+     * @return \kohortpay\sdk\Models\Operations\ExpirePaymentGroupResponse
      */
-	public function paymentGroupsControllerExpire(
+	public function expire(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerExpireResponse
+    ): \kohortpay\sdk\Models\Operations\ExpirePaymentGroupResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerExpireRequest();
+        $request = new \kohortpay\sdk\Models\Operations\ExpirePaymentGroupRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/expire', \kohortpay\sdk\Models\Operations\PaymentGroupsControllerExpireRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/expire', \kohortpay\sdk\Models\Operations\ExpirePaymentGroupRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
@@ -274,7 +274,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerExpireResponse();
+        $response = new \kohortpay\sdk\Models\Operations\ExpirePaymentGroupResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -290,19 +290,19 @@ class PaymentGroups
      * 
      * @param string $id
      * @param \kohortpay\sdk\Models\Components\ValidatePaymentGroupDto $validatePaymentGroupDto
-     * @return \kohortpay\sdk\Models\Operations\PaymentGroupsControllerValidateResponse
+     * @return \kohortpay\sdk\Models\Operations\ValidatePaymentGroupResponse
      */
-	public function paymentGroupsControllerValidate(
+	public function validatePaymentGroup(
         string $id,
         \kohortpay\sdk\Models\Components\ValidatePaymentGroupDto $validatePaymentGroupDto,
-    ): \kohortpay\sdk\Models\Operations\PaymentGroupsControllerValidateResponse
+    ): \kohortpay\sdk\Models\Operations\ValidatePaymentGroupResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerValidateRequest();
+        $request = new \kohortpay\sdk\Models\Operations\ValidatePaymentGroupRequest();
         $request->id = $id;
         $request->validatePaymentGroupDto = $validatePaymentGroupDto;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/validate', \kohortpay\sdk\Models\Operations\PaymentGroupsControllerValidateRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups/{id}/validate', \kohortpay\sdk\Models\Operations\ValidatePaymentGroupRequest::class, $request);
         
         $options = ['http_errors' => false];
         $body = Utils\Utils::serializeRequestBody($request, "validatePaymentGroupDto", "json");
@@ -319,7 +319,7 @@ class PaymentGroups
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\PaymentGroupsControllerValidateResponse();
+        $response = new \kohortpay\sdk\Models\Operations\ValidatePaymentGroupResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

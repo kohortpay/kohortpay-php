@@ -42,7 +42,7 @@ $sdk = sdk\KohortPay::builder()
     ->build();
 
 try {
-    $response = $sdk->paymentIntents->paymentIntentsControllerFindAll();
+    $response = $sdk->paymentIntents->findAll();
 
     if ($response->statusCode === 200) {
         // handle response
@@ -59,36 +59,36 @@ try {
 
 ### [PaymentIntents](docs/sdks/paymentintents/README.md)
 
-* [paymentIntentsControllerFindAll](docs/sdks/paymentintents/README.md#paymentintentscontrollerfindall) - Retrieve all Payment Intents
-* [paymentIntentsControllerCreate](docs/sdks/paymentintents/README.md#paymentintentscontrollercreate) - Create a new Payment Intent
-* [paymentIntentsControllerFindOne](docs/sdks/paymentintents/README.md#paymentintentscontrollerfindone) - Retrieve a Payment Intent by ID
-* [paymentIntentsControllerCancel](docs/sdks/paymentintents/README.md#paymentintentscontrollercancel) - Cancel a Payment Intent by ID
+* [findAll](docs/sdks/paymentintents/README.md#findall) - Retrieve all Payment Intents
+* [create](docs/sdks/paymentintents/README.md#create) - Create a new Payment Intent
+* [findOne](docs/sdks/paymentintents/README.md#findone) - Retrieve a Payment Intent by ID
+* [cancel](docs/sdks/paymentintents/README.md#cancel) - Cancel a Payment Intent by ID
 
 ### [PaymentGroups](docs/sdks/paymentgroups/README.md)
 
-* [paymentGroupsControllerFindAll](docs/sdks/paymentgroups/README.md#paymentgroupscontrollerfindall) - Retrieve all payment groups
-* [paymentGroupsControllerCreate](docs/sdks/paymentgroups/README.md#paymentgroupscontrollercreate) - Create a new payment group
-* [paymentGroupsControllerFindOne](docs/sdks/paymentgroups/README.md#paymentgroupscontrollerfindone) - Retrieve a payment group by id
-* [paymentGroupsControllerUpdate](docs/sdks/paymentgroups/README.md#paymentgroupscontrollerupdate) - Update a payment group by id
-* [paymentGroupsControllerParticipants](docs/sdks/paymentgroups/README.md#paymentgroupscontrollerparticipants) - Retrieve participants of a payment group by id
-* [paymentGroupsControllerCancel](docs/sdks/paymentgroups/README.md#paymentgroupscontrollercancel) - Cancel a payment group by id
-* [paymentGroupsControllerExpire](docs/sdks/paymentgroups/README.md#paymentgroupscontrollerexpire) - Expire a payment group by id
-* [paymentGroupsControllerValidate](docs/sdks/paymentgroups/README.md#paymentgroupscontrollervalidate) - Validate a payment group by id
+* [findAll](docs/sdks/paymentgroups/README.md#findall) - Retrieve all payment groups
+* [create](docs/sdks/paymentgroups/README.md#create) - Create a new payment group
+* [findOne](docs/sdks/paymentgroups/README.md#findone) - Retrieve a payment group by id
+* [update](docs/sdks/paymentgroups/README.md#update) - Update a payment group by id
+* [getParticipants](docs/sdks/paymentgroups/README.md#getparticipants) - Retrieve participants of a payment group by id
+* [cancel](docs/sdks/paymentgroups/README.md#cancel) - Cancel a payment group by id
+* [expire](docs/sdks/paymentgroups/README.md#expire) - Expire a payment group by id
+* [validatePaymentGroup](docs/sdks/paymentgroups/README.md#validatepaymentgroup) - Validate a payment group by id
 
 ### [Customers](docs/sdks/customers/README.md)
 
-* [customersControllerFindAll](docs/sdks/customers/README.md#customerscontrollerfindall) - find All customers of an organization.
-* [customersControllerCreate](docs/sdks/customers/README.md#customerscontrollercreate) - Create a new customer.
-* [customersControllerRemove](docs/sdks/customers/README.md#customerscontrollerremove)
-* [customersControllerFindOne](docs/sdks/customers/README.md#customerscontrollerfindone) - find All customers of an organization.
-* [customersControllerUpdate](docs/sdks/customers/README.md#customerscontrollerupdate)
+* [findAll](docs/sdks/customers/README.md#findall) - find All customers of an organization.
+* [create](docs/sdks/customers/README.md#create) - Create a new customer.
+* [delete](docs/sdks/customers/README.md#delete) - Delete a customer.
+* [findOne](docs/sdks/customers/README.md#findone) - find All customers of an organization.
+* [updateCustomer](docs/sdks/customers/README.md#updatecustomer) - Update a customer.
 
 ### [CheckoutSessions](docs/sdks/checkoutsessions/README.md)
 
-* [checkoutSessionsControllerFindAll](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollerfindall) - Retrieve all checkout sessions for the current organization and livemode.
-* [checkoutSessionsControllerCreate](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollercreate) - Create a new checkout session.
-* [checkoutSessionsControllerFindOne](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollerfindone) - Retrieve a checkout session by ID for the current organization and livemode.
-* [checkoutSessionsControllerExpire](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollerexpire) - Expire a checkout session by ID for the current organization and livemode.
+* [findAll](docs/sdks/checkoutsessions/README.md#findall) - Retrieve all checkout sessions for the current organization and livemode.
+* [create](docs/sdks/checkoutsessions/README.md#create) - Create a new checkout session.
+* [findOne](docs/sdks/checkoutsessions/README.md#findone) - Retrieve a checkout session by ID for the current organization and livemode.
+* [expire](docs/sdks/checkoutsessions/README.md#expire) - Expire a checkout session by ID for the current organization and livemode.
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Server Selection [server] -->

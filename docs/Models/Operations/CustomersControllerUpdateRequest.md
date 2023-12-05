@@ -1,9 +1,0 @@
-# CustomersControllerUpdateRequest
-
-
-## Fields
-
-| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `id`                                                                                               | *string*                                                                                           | :heavy_check_mark:                                                                                 | N/A                                                                                                |
-| `updateCustomerDto`                                                                                | [\kohortpay\sdk\Models\Components\UpdateCustomerDto](../../Models/Components/UpdateCustomerDto.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |

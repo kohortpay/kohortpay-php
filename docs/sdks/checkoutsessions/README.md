@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [checkoutSessionsControllerFindAll](#checkoutsessionscontrollerfindall) - Retrieve all checkout sessions for the current organization and livemode.
-* [checkoutSessionsControllerCreate](#checkoutsessionscontrollercreate) - Create a new checkout session.
-* [checkoutSessionsControllerFindOne](#checkoutsessionscontrollerfindone) - Retrieve a checkout session by ID for the current organization and livemode.
-* [checkoutSessionsControllerExpire](#checkoutsessionscontrollerexpire) - Expire a checkout session by ID for the current organization and livemode.
+* [findAll](#findall) - Retrieve all checkout sessions for the current organization and livemode.
+* [create](#create) - Create a new checkout session.
+* [findOne](#findone) - Retrieve a checkout session by ID for the current organization and livemode.
+* [expire](#expire) - Expire a checkout session by ID for the current organization and livemode.
 
-## checkoutSessionsControllerFindAll
+## findAll
 
 Retrieve all checkout sessions for the current organization and livemode.
 
@@ -29,7 +29,7 @@ $security->bearer = '';
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
 try {
-    $response = $sdk->checkoutSessions->checkoutSessionsControllerFindAll();
+    $response = $sdk->checkoutSessions->findAll();
 
     if ($response->statusCode === 200) {
         // handle response
@@ -42,10 +42,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindAllResponse](../../Models/Operations/CheckoutSessionsControllerFindAllResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse](../../Models/Operations/FindAllCheckoutSessionsResponse.md)**
 
 
-## checkoutSessionsControllerCreate
+## create
 
 Create a new checkout session.
 
@@ -81,7 +81,7 @@ try {
     $request->amountTotal = 35000;
     $request->locale = 'en-US';;
 
-    $response = $sdk->checkoutSessions->checkoutSessionsControllerCreate($request);
+    $response = $sdk->checkoutSessions->create($request);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -100,10 +100,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CheckoutSessionsControllerCreateResponse](../../Models/Operations/CheckoutSessionsControllerCreateResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\CreateCheckoutResponse](../../Models/Operations/CreateCheckoutResponse.md)**
 
 
-## checkoutSessionsControllerFindOne
+## findOne
 
 Retrieve a checkout session by ID for the current organization and livemode.
 
@@ -127,7 +127,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->checkoutSessions->checkoutSessionsControllerFindOne('string');
+    $response = $sdk->checkoutSessions->findOne('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -146,10 +146,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindOneResponse](../../Models/Operations/CheckoutSessionsControllerFindOneResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindOneCheckoutSessionResponse](../../Models/Operations/FindOneCheckoutSessionResponse.md)**
 
 
-## checkoutSessionsControllerExpire
+## expire
 
 Expire a checkout session by ID for the current organization and livemode.
 
@@ -173,7 +173,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->checkoutSessions->checkoutSessionsControllerExpire('string');
+    $response = $sdk->checkoutSessions->expire('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -192,5 +192,5 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\CheckoutSessionsControllerExpireResponse](../../Models/Operations/CheckoutSessionsControllerExpireResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\ExpireCheckoutSessionResponse](../../Models/Operations/ExpireCheckoutSessionResponse.md)**
 

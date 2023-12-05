@@ -24,10 +24,10 @@ class CheckoutSessions
     /**
      * Retrieve all checkout sessions for the current organization and livemode.
      * 
-     * @return \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindAllResponse
+     * @return \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse
      */
-	public function checkoutSessionsControllerFindAll(
-    ): \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindAllResponse
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions');
@@ -42,7 +42,7 @@ class CheckoutSessions
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindAllResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -75,11 +75,11 @@ class CheckoutSessions
      * Create a new checkout session.
      * 
      * @param \kohortpay\sdk\Models\Components\CreateCheckoutSessionDto $request
-     * @return \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerCreateResponse
+     * @return \kohortpay\sdk\Models\Operations\CreateCheckoutResponse
      */
-	public function checkoutSessionsControllerCreate(
+	public function create(
         \kohortpay\sdk\Models\Components\CreateCheckoutSessionDto $request,
-    ): \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerCreateResponse
+    ): \kohortpay\sdk\Models\Operations\CreateCheckoutResponse
     {
         $baseUrl = $this->sdkConfiguration->getServerUrl();
         $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions');
@@ -99,7 +99,7 @@ class CheckoutSessions
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerCreateResponse();
+        $response = new \kohortpay\sdk\Models\Operations\CreateCheckoutResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -132,17 +132,17 @@ class CheckoutSessions
      * Retrieve a checkout session by ID for the current organization and livemode.
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindOneResponse
+     * @return \kohortpay\sdk\Models\Operations\FindOneCheckoutSessionResponse
      */
-	public function checkoutSessionsControllerFindOne(
+	public function findOne(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindOneResponse
+    ): \kohortpay\sdk\Models\Operations\FindOneCheckoutSessionResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindOneRequest();
+        $request = new \kohortpay\sdk\Models\Operations\FindOneCheckoutSessionRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions/{id}', \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindOneRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions/{id}', \kohortpay\sdk\Models\Operations\FindOneCheckoutSessionRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
@@ -154,7 +154,7 @@ class CheckoutSessions
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerFindOneResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindOneCheckoutSessionResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -181,17 +181,17 @@ class CheckoutSessions
      * Expire a checkout session by ID for the current organization and livemode.
      * 
      * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerExpireResponse
+     * @return \kohortpay\sdk\Models\Operations\ExpireCheckoutSessionResponse
      */
-	public function checkoutSessionsControllerExpire(
+	public function expire(
         string $id,
-    ): \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerExpireResponse
+    ): \kohortpay\sdk\Models\Operations\ExpireCheckoutSessionResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerExpireRequest();
+        $request = new \kohortpay\sdk\Models\Operations\ExpireCheckoutSessionRequest();
         $request->id = $id;
         
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions/{id}/expire', \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerExpireRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions/{id}/expire', \kohortpay\sdk\Models\Operations\ExpireCheckoutSessionRequest::class, $request);
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = 'application/json';
@@ -203,7 +203,7 @@ class CheckoutSessions
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\CheckoutSessionsControllerExpireResponse();
+        $response = new \kohortpay\sdk\Models\Operations\ExpireCheckoutSessionResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

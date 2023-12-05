@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [paymentGroupsControllerFindAll](#paymentgroupscontrollerfindall) - Retrieve all payment groups
-* [paymentGroupsControllerCreate](#paymentgroupscontrollercreate) - Create a new payment group
-* [paymentGroupsControllerFindOne](#paymentgroupscontrollerfindone) - Retrieve a payment group by id
-* [paymentGroupsControllerUpdate](#paymentgroupscontrollerupdate) - Update a payment group by id
-* [paymentGroupsControllerParticipants](#paymentgroupscontrollerparticipants) - Retrieve participants of a payment group by id
-* [paymentGroupsControllerCancel](#paymentgroupscontrollercancel) - Cancel a payment group by id
-* [paymentGroupsControllerExpire](#paymentgroupscontrollerexpire) - Expire a payment group by id
-* [paymentGroupsControllerValidate](#paymentgroupscontrollervalidate) - Validate a payment group by id
+* [findAll](#findall) - Retrieve all payment groups
+* [create](#create) - Create a new payment group
+* [findOne](#findone) - Retrieve a payment group by id
+* [update](#update) - Update a payment group by id
+* [getParticipants](#getparticipants) - Retrieve participants of a payment group by id
+* [cancel](#cancel) - Cancel a payment group by id
+* [expire](#expire) - Expire a payment group by id
+* [validatePaymentGroup](#validatepaymentgroup) - Validate a payment group by id
 
-## paymentGroupsControllerFindAll
+## findAll
 
 Retrieve all payment groups
 
@@ -33,7 +33,7 @@ $security->bearer = '';
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
 try {
-    $response = $sdk->paymentGroups->paymentGroupsControllerFindAll();
+    $response = $sdk->paymentGroups->findAll();
 
     if ($response->statusCode === 200) {
         // handle response
@@ -46,10 +46,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindAllResponse](../../Models/Operations/PaymentGroupsControllerFindAllResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse](../../Models/Operations/FindAllPaymentGroupsResponse.md)**
 
 
-## paymentGroupsControllerCreate
+## create
 
 Create a new payment group
 
@@ -74,9 +74,9 @@ try {
     $request->customerId = 'cus_IzkjlvAhdjzjht3';
     $request->paymentIntentId = 'pi_1JYLo8KerLxWZaQtys6ZQ1xR';
     $request->metadata = new Components\CreatePaymentGroupDtoMetadata();
-    $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2023-12-05T15:08:34.820Z');;
+    $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2023-12-05T23:49:12.816Z');;
 
-    $response = $sdk->paymentGroups->paymentGroupsControllerCreate($request);
+    $response = $sdk->paymentGroups->create($request);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -95,10 +95,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerCreateResponse](../../Models/Operations/PaymentGroupsControllerCreateResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\CreatePaymentGroupResponse](../../Models/Operations/CreatePaymentGroupResponse.md)**
 
 
-## paymentGroupsControllerFindOne
+## findOne
 
 Retrieve a payment group by id
 
@@ -122,7 +122,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->paymentGroupsControllerFindOne('string');
+    $response = $sdk->paymentGroups->findOne('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -141,10 +141,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerFindOneResponse](../../Models/Operations/PaymentGroupsControllerFindOneResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindOnePaymentGroupResponse](../../Models/Operations/FindOnePaymentGroupResponse.md)**
 
 
-## paymentGroupsControllerUpdate
+## update
 
 Update a payment group by id
 
@@ -169,7 +169,7 @@ try {
         $updatePaymentGroupDto = new Components\UpdatePaymentGroupDto();
     $updatePaymentGroupDto->metadata = new Components\UpdatePaymentGroupDtoMetadata();
 
-    $response = $sdk->paymentGroups->paymentGroupsControllerUpdate('string', $updatePaymentGroupDto);
+    $response = $sdk->paymentGroups->update('string', $updatePaymentGroupDto);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -189,10 +189,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerUpdateResponse](../../Models/Operations/PaymentGroupsControllerUpdateResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\UpdateResponse](../../Models/Operations/UpdateResponse.md)**
 
 
-## paymentGroupsControllerParticipants
+## getParticipants
 
 Retrieve participants of a payment group by id
 
@@ -216,7 +216,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->paymentGroupsControllerParticipants('string');
+    $response = $sdk->paymentGroups->getParticipants('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -235,10 +235,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerParticipantsResponse](../../Models/Operations/PaymentGroupsControllerParticipantsResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\GetParticipantsResponse](../../Models/Operations/GetParticipantsResponse.md)**
 
 
-## paymentGroupsControllerCancel
+## cancel
 
 Cancel a payment group by id
 
@@ -262,7 +262,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->paymentGroupsControllerCancel('string');
+    $response = $sdk->paymentGroups->cancel('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -281,10 +281,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerCancelResponse](../../Models/Operations/PaymentGroupsControllerCancelResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\CancelPaymentGroupResponse](../../Models/Operations/CancelPaymentGroupResponse.md)**
 
 
-## paymentGroupsControllerExpire
+## expire
 
 Expire a payment group by id
 
@@ -308,7 +308,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->paymentGroupsControllerExpire('string');
+    $response = $sdk->paymentGroups->expire('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -327,10 +327,10 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerExpireResponse](../../Models/Operations/PaymentGroupsControllerExpireResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\ExpirePaymentGroupResponse](../../Models/Operations/ExpirePaymentGroupResponse.md)**
 
 
-## paymentGroupsControllerValidate
+## validatePaymentGroup
 
 Validate a payment group by id
 
@@ -355,7 +355,7 @@ try {
         $validatePaymentGroupDto = new Components\ValidatePaymentGroupDto();
     $validatePaymentGroupDto->customerEmail = 'customer@gmail.com';
 
-    $response = $sdk->paymentGroups->paymentGroupsControllerValidate('string', $validatePaymentGroupDto);
+    $response = $sdk->paymentGroups->validatePaymentGroup('string', $validatePaymentGroupDto);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -375,5 +375,5 @@ try {
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\PaymentGroupsControllerValidateResponse](../../Models/Operations/PaymentGroupsControllerValidateResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\ValidatePaymentGroupResponse](../../Models/Operations/ValidatePaymentGroupResponse.md)**
 
