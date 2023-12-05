@@ -21,12 +21,14 @@ jobs:
       languages: |
         - php
       mode: direct
+      openapi_doc_auth_header: x-api-key
       openapi_docs: |
-        - https://raw.githubusercontent.com/kohortpay/api/main/openapi.json?token=GHSAT0AAAAAACHFXGK44HELSWZNP4JZNHSCZLPFONA
+        - https://app.speakeasyapi.dev/v1/apis/kohortPay/version/v0.1.0/schema/download
       publish_php: true
       speakeasy_version: latest
     secrets:
       github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      openapi_doc_auth_token: ${{ secrets.SPEAKEASY_API_KEY }}
       packagist_token: ${{ secrets.PACKAGIST_TOKEN }}
       packagist_username: ${{ secrets.PACKAGIST_USERNAME }}
       speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
