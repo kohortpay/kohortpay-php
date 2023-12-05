@@ -1,12 +1,25 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 7ebca702ce6b4da96308caf93011f68e
+  docVersion: 0.1.0
+  speakeasyVersion: 1.125.1
+  generationVersion: 2.210.3
 generation:
   comments: {}
   sdkClassName: kohortPay
+  repoURL: https://github.com/kohortpay/kohortpay-php.git
   maintainOpenAPIOrder: true
   usageSnippets:
     optionalPropertyRendering: withExample
+features:
+  php:
+    core: 3.1.2
+    flattening: 2.81.1
+    globalSecurity: 2.81.1
+    globalServerURLs: 2.82.1
+    methodSecurity: 2.82.0
 php:
-  version: 0.0.1
+  version: 0.1.0
   imports:
     option: openapi
     paths:
@@ -16,7 +29,10 @@ php:
       shared: Models/Components
       webhooks: Models/Webhooks
   inputModelSuffix: input
+  installationURL: https://github.com/kohortpay/kohortpay-php
   maxMethodParams: 4
   namespace: kohortpay\sdk
   outputModelSuffix: output
   packageName: kohortpay/kohortpay-php
+  published: true
+  repoSubDirectory: .
