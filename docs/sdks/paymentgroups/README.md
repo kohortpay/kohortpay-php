@@ -74,7 +74,7 @@ try {
     $request->customerId = 'cus_IzkjlvAhdjzjht3';
     $request->paymentIntentId = 'pi_1JYLo8KerLxWZaQtys6ZQ1xR';
     $request->metadata = new Components\CreatePaymentGroupDtoMetadata();
-    $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2023-12-05T14:59:36.611Z');;
+    $request->expiresAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2023-12-05T15:08:34.820Z');;
 
     $response = $sdk->paymentGroups->paymentGroupsControllerCreate($request);
 
