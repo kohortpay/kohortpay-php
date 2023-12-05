@@ -1,0 +1,22 @@
+configVersion: 1.0.0
+generation:
+  comments: {}
+  sdkClassName: kohortPay
+  maintainOpenAPIOrder: true
+  usageSnippets:
+    optionalPropertyRendering: withExample
+php:
+  version: 0.0.1
+  imports:
+    option: openapi
+    paths:
+      callbacks: Models/Callbacks
+      errors: Models/Errors
+      operations: Models/Operations
+      shared: Models/Components
+      webhooks: Models/Webhooks
+  inputModelSuffix: input
+  maxMethodParams: 4
+  namespace: kohortpay\sdk
+  outputModelSuffix: output
+  packageName: kohortpay/kohortpay-php
