@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace kohortpay\sdk;
 
-class CheckoutSessionsAPI 
+class CheckoutSessions 
 {
 
 	private SDKConfiguration $sdkConfiguration;

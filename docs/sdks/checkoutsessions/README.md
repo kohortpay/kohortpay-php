@@ -1,4 +1,4 @@
-# CheckoutSessionsAPI
+# CheckoutSessions
 
 
 ### Available Operations
@@ -29,7 +29,7 @@ $security->bearer = '';
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
 try {
-    $response = $sdk->checkoutSessionsAPI->checkoutSessionsControllerFindAll();
+    $response = $sdk->checkoutSessions->checkoutSessionsControllerFindAll();
 
     if ($response->statusCode === 200) {
         // handle response
@@ -81,7 +81,7 @@ try {
     $request->amountTotal = 35000;
     $request->locale = 'en-US';;
 
-    $response = $sdk->checkoutSessionsAPI->checkoutSessionsControllerCreate($request);
+    $response = $sdk->checkoutSessions->checkoutSessionsControllerCreate($request);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -127,7 +127,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->checkoutSessionsAPI->checkoutSessionsControllerFindOne('string');
+    $response = $sdk->checkoutSessions->checkoutSessionsControllerFindOne('string');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -173,7 +173,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->checkoutSessionsAPI->checkoutSessionsControllerExpire('string');
+    $response = $sdk->checkoutSessions->checkoutSessionsControllerExpire('string');
 
     if ($response->statusCode === 200) {
         // handle response

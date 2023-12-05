@@ -2,7 +2,7 @@ src/SDKConfiguration.php
 src/PaymentIntents.php
 src/PaymentGroups.php
 src/Customers.php
-src/CheckoutSessionsAPI.php
+src/CheckoutSessions.php
 src/KohortPay.php
 src/KohortPayBuilder.php
 composer.json
@@ -139,6 +139,6 @@ docs/sdks/kohortpay/README.md
 docs/sdks/paymentintents/README.md
 docs/sdks/paymentgroups/README.md
 docs/sdks/customers/README.md
-docs/sdks/checkoutsessionsapi/README.md
+docs/sdks/checkoutsessions/README.md
 USAGE.md
 .gitattributes

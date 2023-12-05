@@ -89,12 +89,12 @@ try {
 * [customersControllerFindOne](docs/sdks/customers/README.md#customerscontrollerfindone) - find All customers of an organization.
 * [customersControllerUpdate](docs/sdks/customers/README.md#customerscontrollerupdate)
 
-### [CheckoutSessionsAPI](docs/sdks/checkoutsessionsapi/README.md)
+### [CheckoutSessions](docs/sdks/checkoutsessions/README.md)
 
-* [checkoutSessionsControllerFindAll](docs/sdks/checkoutsessionsapi/README.md#checkoutsessionscontrollerfindall) - Retrieve all checkout sessions for the current organization and livemode.
-* [checkoutSessionsControllerCreate](docs/sdks/checkoutsessionsapi/README.md#checkoutsessionscontrollercreate) - Create a new checkout session.
-* [checkoutSessionsControllerFindOne](docs/sdks/checkoutsessionsapi/README.md#checkoutsessionscontrollerfindone) - Retrieve a checkout session by ID for the current organization and livemode.
-* [checkoutSessionsControllerExpire](docs/sdks/checkoutsessionsapi/README.md#checkoutsessionscontrollerexpire) - Expire a checkout session by ID for the current organization and livemode.
+* [checkoutSessionsControllerFindAll](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollerfindall) - Retrieve all checkout sessions for the current organization and livemode.
+* [checkoutSessionsControllerCreate](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollercreate) - Create a new checkout session.
+* [checkoutSessionsControllerFindOne](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollerfindone) - Retrieve a checkout session by ID for the current organization and livemode.
+* [checkoutSessionsControllerExpire](docs/sdks/checkoutsessions/README.md#checkoutsessionscontrollerexpire) - Expire a checkout session by ID for the current organization and livemode.
 <!-- End Available Resources and Operations [operations] -->
 
 <!-- Start Server Selection [server] -->

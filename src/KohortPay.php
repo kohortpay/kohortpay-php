@@ -94,7 +94,7 @@ class KohortPay
 	
 	public Customers $customers;
 	
-	public CheckoutSessionsAPI $checkoutSessionsAPI;
+	public CheckoutSessions $checkoutSessions;
 		
 	private SDKConfiguration $sdkConfiguration;
 
@@ -121,6 +121,6 @@ class KohortPay
 		
 		$this->customers = new Customers($this->sdkConfiguration);
 		
-		$this->checkoutSessionsAPI = new CheckoutSessionsAPI($this->sdkConfiguration);
+		$this->checkoutSessions = new CheckoutSessions($this->sdkConfiguration);
 	}
 }
