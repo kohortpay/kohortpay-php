@@ -3,47 +3,10 @@
 
 ### Available Operations
 
-* [findAll](#findall) - Retrieve all checkout sessions for the current organization and livemode.
 * [create](#create) - Create a new checkout session.
+* [findAll](#findall) - Retrieve all checkout sessions for the current organization and livemode.
 * [findOne](#findone) - Retrieve a checkout session by ID for the current organization and livemode.
 * [expire](#expire) - Expire a checkout session by ID for the current organization and livemode.
-
-## findAll
-
-Retrieve all checkout sessions for the current organization and livemode.
-
-### Example Usage
-
-```php
-<?php
-
-declare(strict_types=1);
-require_once 'vendor/autoload.php';
-
-use \kohortpay\sdk;
-use \kohortpay\sdk\Models\Components;
-
-$security = new Components\Security();
-$security->bearer = '';
-
-$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
-
-try {
-    $response = $sdk->checkoutSessions->findAll();
-
-    if ($response->statusCode === 200) {
-        // handle response
-    }
-} catch (Exception $e) {
-    // handle exception
-}
-```
-
-
-### Response
-
-**[?\kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse](../../Models/Operations/FindAllCheckoutSessionsResponse.md)**
-
 
 ## create
 
@@ -61,7 +24,7 @@ use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -103,6 +66,43 @@ try {
 **[?\kohortpay\sdk\Models\Operations\CreateCheckoutResponse](../../Models/Operations/CreateCheckoutResponse.md)**
 
 
+## findAll
+
+Retrieve all checkout sessions for the current organization and livemode.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \kohortpay\sdk;
+use \kohortpay\sdk\Models\Components;
+
+$security = new Components\Security();
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
+
+try {
+    $response = $sdk->checkoutSessions->findAll();
+
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+
+### Response
+
+**[?\kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse](../../Models/Operations/FindAllCheckoutSessionsResponse.md)**
+
+
 ## findOne
 
 Retrieve a checkout session by ID for the current organization and livemode.
@@ -120,7 +120,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -166,7 +166,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 

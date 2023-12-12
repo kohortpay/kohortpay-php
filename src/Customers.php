@@ -22,40 +22,6 @@ class Customers
 	}
 	
     /**
-     * find All customers of an organization.
-     * 
-     * find All customers of an organization.
-     * 
-     * @return \kohortpay\sdk\Models\Operations\FindAllCustomersResponse
-     */
-	public function findAll(
-    ): \kohortpay\sdk\Models\Operations\FindAllCustomersResponse
-    {
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers');
-        
-        $options = ['http_errors' => false];
-        $options['headers']['Accept'] = '*/*';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        
-        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
-        
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-
-        $response = new \kohortpay\sdk\Models\Operations\FindAllCustomersResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        
-        if ($httpResponse->getStatusCode() === 200 or $httpResponse->getStatusCode() === 400) {
-        }
-
-        return $response;
-    }
-	
-    /**
      * Create a new customer.
      * 
      * Create a new customer.
@@ -97,34 +63,29 @@ class Customers
     }
 	
     /**
-     * Delete a customer.
+     * find All customers of an organization.
      * 
-     * Delete a customer.
+     * find All customers of an organization.
      * 
-     * @param string $id
-     * @return \kohortpay\sdk\Models\Operations\DeleteCustomerResponse
+     * @return \kohortpay\sdk\Models\Operations\FindAllCustomersResponse
      */
-	public function delete(
-        string $id,
-    ): \kohortpay\sdk\Models\Operations\DeleteCustomerResponse
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllCustomersResponse
     {
-        $request = new \kohortpay\sdk\Models\Operations\DeleteCustomerRequest();
-        $request->id = $id;
-        
         $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\DeleteCustomerRequest::class, $request);
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers');
         
         $options = ['http_errors' => false];
         $options['headers']['Accept'] = '*/*';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         
-        $httpResponse = $this->sdkConfiguration->securityClient->request('DELETE', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
         $statusCode = $httpResponse->getStatusCode();
 
-        $response = new \kohortpay\sdk\Models\Operations\DeleteCustomerResponse();
+        $response = new \kohortpay\sdk\Models\Operations\FindAllCustomersResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -211,6 +172,45 @@ class Customers
         $statusCode = $httpResponse->getStatusCode();
 
         $response = new \kohortpay\sdk\Models\Operations\UpdateCustomerResponse();
+        $response->statusCode = $statusCode;
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200 or $httpResponse->getStatusCode() === 400) {
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Delete a customer.
+     * 
+     * Delete a customer.
+     * 
+     * @param string $id
+     * @return \kohortpay\sdk\Models\Operations\DeleteCustomerResponse
+     */
+	public function delete(
+        string $id,
+    ): \kohortpay\sdk\Models\Operations\DeleteCustomerResponse
+    {
+        $request = new \kohortpay\sdk\Models\Operations\DeleteCustomerRequest();
+        $request->id = $id;
+        
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/customers/{id}', \kohortpay\sdk\Models\Operations\DeleteCustomerRequest::class, $request);
+        
+        $options = ['http_errors' => false];
+        $options['headers']['Accept'] = '*/*';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('DELETE', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+
+        $response = new \kohortpay\sdk\Models\Operations\DeleteCustomerResponse();
         $response->statusCode = $statusCode;
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

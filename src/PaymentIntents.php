@@ -22,38 +22,6 @@ class PaymentIntents
 	}
 	
     /**
-     * Retrieve all Payment Intents
-     * 
-     * @return \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse
-     */
-	public function findAll(
-    ): \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse
-    {
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents');
-        
-        $options = ['http_errors' => false];
-        $options['headers']['Accept'] = '*/*';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        
-        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
-        
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-
-        $response = new \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        
-        if ($httpResponse->getStatusCode() === 200) {
-        }
-
-        return $response;
-    }
-	
-    /**
      * Create a new Payment Intent
      * 
      * @param \kohortpay\sdk\Models\Components\CreatePaymentIntentDto $request
@@ -93,6 +61,38 @@ class PaymentIntents
             }
         }
         else if ($httpResponse->getStatusCode() === 400) {
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Retrieve all Payment Intents
+     * 
+     * @return \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse
+     */
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-intents');
+        
+        $options = ['http_errors' => false];
+        $options['headers']['Accept'] = '*/*';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+
+        $response = new \kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse();
+        $response->statusCode = $statusCode;
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
         }
 
         return $response;

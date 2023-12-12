@@ -3,51 +3,14 @@
 
 ### Available Operations
 
-* [findAll](#findall) - Retrieve all payment groups
 * [create](#create) - Create a new payment group
+* [findAll](#findall) - Retrieve all payment groups
 * [findOne](#findone) - Retrieve a payment group by id
 * [update](#update) - Update a payment group by id
 * [getParticipants](#getparticipants) - Retrieve participants of a payment group by id
 * [cancel](#cancel) - Cancel a payment group by id
 * [expire](#expire) - Expire a payment group by id
 * [validatePaymentGroup](#validatepaymentgroup) - Validate a payment group by id
-
-## findAll
-
-Retrieve all payment groups
-
-### Example Usage
-
-```php
-<?php
-
-declare(strict_types=1);
-require_once 'vendor/autoload.php';
-
-use \kohortpay\sdk;
-use \kohortpay\sdk\Models\Components;
-
-$security = new Components\Security();
-$security->bearer = '';
-
-$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
-
-try {
-    $response = $sdk->paymentGroups->findAll();
-
-    if ($response->statusCode === 200) {
-        // handle response
-    }
-} catch (Exception $e) {
-    // handle exception
-}
-```
-
-
-### Response
-
-**[?\kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse](../../Models/Operations/FindAllPaymentGroupsResponse.md)**
-
 
 ## create
 
@@ -65,7 +28,7 @@ use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -98,6 +61,43 @@ try {
 **[?\kohortpay\sdk\Models\Operations\CreatePaymentGroupResponse](../../Models/Operations/CreatePaymentGroupResponse.md)**
 
 
+## findAll
+
+Retrieve all payment groups
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \kohortpay\sdk;
+use \kohortpay\sdk\Models\Components;
+
+$security = new Components\Security();
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
+
+try {
+    $response = $sdk->paymentGroups->findAll();
+
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+
+### Response
+
+**[?\kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse](../../Models/Operations/FindAllPaymentGroupsResponse.md)**
+
+
 ## findOne
 
 Retrieve a payment group by id
@@ -115,7 +115,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -161,7 +161,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -209,7 +209,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -255,7 +255,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -301,7 +301,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -347,7 +347,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 

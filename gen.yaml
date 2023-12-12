@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 9f87dc911ffff2e713812e38e86254fe
   docVersion: 0.1.0
-  speakeasyVersion: 1.125.2
-  generationVersion: 2.210.6
+  speakeasyVersion: 1.126.0
+  generationVersion: 2.213.3
 generation:
   comments: {}
   sdkClassName: kohortPay
@@ -13,14 +13,14 @@ generation:
     optionalPropertyRendering: withExample
 features:
   php:
-    core: 3.1.2
+    core: 3.2.0
     flattening: 2.81.1
-    globalSecurity: 2.81.1
+    globalSecurity: 2.81.2
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.0
     nameOverrides: 2.81.1
 php:
-  version: 0.1.6
+  version: 0.2.0
   imports:
     option: openapi
     paths:

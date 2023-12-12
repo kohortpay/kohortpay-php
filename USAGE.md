@@ -9,16 +9,23 @@ use kohortpay\sdk;
 use kohortpay\sdk\Models\Components;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $response = $sdk->paymentIntents->findAll();
+    $request = new Components\CreatePaymentIntentDto();
+    $request->amount = 5000;
+    $request->checkoutSessionId = 'cs_1abc2def3ghi';
+    $request->customerId = 'cus_1abc2def3ghi';
+    $request->metadata = new Components\Metadata();
+    $request->status = Components\Status::RequiresPaymentMethod;
 
-    if ($response->statusCode === 200) {
+    $response = $sdk->paymentIntents->create($request);
+
+    if ($response->createPaymentIntentDto !== null) {
         // handle response
     }
 } catch (Exception $e) {

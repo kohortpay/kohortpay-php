@@ -22,38 +22,6 @@ class PaymentGroups
 	}
 	
     /**
-     * Retrieve all payment groups
-     * 
-     * @return \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse
-     */
-	public function findAll(
-    ): \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse
-    {
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups');
-        
-        $options = ['http_errors' => false];
-        $options['headers']['Accept'] = '*/*';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        
-        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
-        
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-
-        $response = new \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        
-        if ($httpResponse->getStatusCode() === 200) {
-        }
-
-        return $response;
-    }
-	
-    /**
      * Create a new payment group
      * 
      * @param \kohortpay\sdk\Models\Components\CreatePaymentGroupDto $request
@@ -87,6 +55,38 @@ class PaymentGroups
         $response->rawResponse = $httpResponse;
         
         if ($httpResponse->getStatusCode() === 201 or $httpResponse->getStatusCode() === 400) {
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Retrieve all payment groups
+     * 
+     * @return \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse
+     */
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/payment-groups');
+        
+        $options = ['http_errors' => false];
+        $options['headers']['Accept'] = '*/*';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+
+        $response = new \kohortpay\sdk\Models\Operations\FindAllPaymentGroupsResponse();
+        $response->statusCode = $statusCode;
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
         }
 
         return $response;

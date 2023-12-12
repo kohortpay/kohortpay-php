@@ -12,10 +12,10 @@ use \kohortpay\sdk\Utils\SpeakeasyMetadata;
 class Security
 {
 	#[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
-    public string $bearer;
+    public ?string $bearer = null;
     
 	public function __construct()
 	{
-		$this->bearer = "";
+		$this->bearer = null;
 	}
 }

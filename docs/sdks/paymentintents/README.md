@@ -3,47 +3,10 @@
 
 ### Available Operations
 
-* [findAll](#findall) - Retrieve all Payment Intents
 * [create](#create) - Create a new Payment Intent
+* [findAll](#findall) - Retrieve all Payment Intents
 * [findOne](#findone) - Retrieve a Payment Intent by ID
 * [cancel](#cancel) - Cancel a Payment Intent by ID
-
-## findAll
-
-Retrieve all Payment Intents
-
-### Example Usage
-
-```php
-<?php
-
-declare(strict_types=1);
-require_once 'vendor/autoload.php';
-
-use \kohortpay\sdk;
-use \kohortpay\sdk\Models\Components;
-
-$security = new Components\Security();
-$security->bearer = '';
-
-$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
-
-try {
-    $response = $sdk->paymentIntents->findAll();
-
-    if ($response->statusCode === 200) {
-        // handle response
-    }
-} catch (Exception $e) {
-    // handle exception
-}
-```
-
-
-### Response
-
-**[?\kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse](../../Models/Operations/FindAllPaymentIntentsResponse.md)**
-
 
 ## create
 
@@ -61,7 +24,7 @@ use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -95,6 +58,43 @@ try {
 **[?\kohortpay\sdk\Models\Operations\CreatePaymentIntentResponse](../../Models/Operations/CreatePaymentIntentResponse.md)**
 
 
+## findAll
+
+Retrieve all Payment Intents
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \kohortpay\sdk;
+use \kohortpay\sdk\Models\Components;
+
+$security = new Components\Security();
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
+
+try {
+    $response = $sdk->paymentIntents->findAll();
+
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+
+### Response
+
+**[?\kohortpay\sdk\Models\Operations\FindAllPaymentIntentsResponse](../../Models/Operations/FindAllPaymentIntentsResponse.md)**
+
+
 ## findOne
 
 Retrieve a Payment Intent by ID
@@ -112,7 +112,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -163,7 +163,7 @@ try {
     
 
     $requestSecurity = new Operations\CancelPaymentIntentSecurity();
-    $requestSecurity->bearer = '';
+    $requestSecurity->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
     $response = $sdk->paymentIntents->cancel($requestSecurity, 'string');
 

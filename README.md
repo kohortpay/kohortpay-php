@@ -35,16 +35,23 @@ use kohortpay\sdk;
 use kohortpay\sdk\Models\Components;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()
     ->setSecurity($security)
     ->build();
 
 try {
-    $response = $sdk->paymentIntents->findAll();
+    $request = new Components\CreatePaymentIntentDto();
+    $request->amount = 5000;
+    $request->checkoutSessionId = 'cs_1abc2def3ghi';
+    $request->customerId = 'cus_1abc2def3ghi';
+    $request->metadata = new Components\Metadata();
+    $request->status = Components\Status::RequiresPaymentMethod;
 
-    if ($response->statusCode === 200) {
+    $response = $sdk->paymentIntents->create($request);
+
+    if ($response->createPaymentIntentDto !== null) {
         // handle response
     }
 } catch (Exception $e) {
@@ -59,15 +66,15 @@ try {
 
 ### [PaymentIntents](docs/sdks/paymentintents/README.md)
 
-* [findAll](docs/sdks/paymentintents/README.md#findall) - Retrieve all Payment Intents
 * [create](docs/sdks/paymentintents/README.md#create) - Create a new Payment Intent
+* [findAll](docs/sdks/paymentintents/README.md#findall) - Retrieve all Payment Intents
 * [findOne](docs/sdks/paymentintents/README.md#findone) - Retrieve a Payment Intent by ID
 * [cancel](docs/sdks/paymentintents/README.md#cancel) - Cancel a Payment Intent by ID
 
 ### [PaymentGroups](docs/sdks/paymentgroups/README.md)
 
-* [findAll](docs/sdks/paymentgroups/README.md#findall) - Retrieve all payment groups
 * [create](docs/sdks/paymentgroups/README.md#create) - Create a new payment group
+* [findAll](docs/sdks/paymentgroups/README.md#findall) - Retrieve all payment groups
 * [findOne](docs/sdks/paymentgroups/README.md#findone) - Retrieve a payment group by id
 * [update](docs/sdks/paymentgroups/README.md#update) - Update a payment group by id
 * [getParticipants](docs/sdks/paymentgroups/README.md#getparticipants) - Retrieve participants of a payment group by id
@@ -77,16 +84,16 @@ try {
 
 ### [Customers](docs/sdks/customers/README.md)
 
-* [findAll](docs/sdks/customers/README.md#findall) - find All customers of an organization.
 * [create](docs/sdks/customers/README.md#create) - Create a new customer.
-* [delete](docs/sdks/customers/README.md#delete) - Delete a customer.
+* [findAll](docs/sdks/customers/README.md#findall) - find All customers of an organization.
 * [findOne](docs/sdks/customers/README.md#findone) - find All customers of an organization.
 * [updateCustomer](docs/sdks/customers/README.md#updatecustomer) - Update a customer.
+* [delete](docs/sdks/customers/README.md#delete) - Delete a customer.
 
 ### [CheckoutSessions](docs/sdks/checkoutsessions/README.md)
 
-* [findAll](docs/sdks/checkoutsessions/README.md#findall) - Retrieve all checkout sessions for the current organization and livemode.
 * [create](docs/sdks/checkoutsessions/README.md#create) - Create a new checkout session.
+* [findAll](docs/sdks/checkoutsessions/README.md#findall) - Retrieve all checkout sessions for the current organization and livemode.
 * [findOne](docs/sdks/checkoutsessions/README.md#findone) - Retrieve a checkout session by ID for the current organization and livemode.
 * [expire](docs/sdks/checkoutsessions/README.md#expire) - Expire a checkout session by ID for the current organization and livemode.
 <!-- End Available Resources and Operations [operations] -->

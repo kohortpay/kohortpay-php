@@ -3,48 +3,11 @@
 
 ### Available Operations
 
-* [findAll](#findall) - find All customers of an organization.
 * [create](#create) - Create a new customer.
-* [delete](#delete) - Delete a customer.
+* [findAll](#findall) - find All customers of an organization.
 * [findOne](#findone) - find All customers of an organization.
 * [updateCustomer](#updatecustomer) - Update a customer.
-
-## findAll
-
-find All customers of an organization.
-
-### Example Usage
-
-```php
-<?php
-
-declare(strict_types=1);
-require_once 'vendor/autoload.php';
-
-use \kohortpay\sdk;
-use \kohortpay\sdk\Models\Components;
-
-$security = new Components\Security();
-$security->bearer = '';
-
-$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
-
-try {
-    $response = $sdk->customers->findAll();
-
-    if ($response->statusCode === 200) {
-        // handle response
-    }
-} catch (Exception $e) {
-    // handle exception
-}
-```
-
-
-### Response
-
-**[?\kohortpay\sdk\Models\Operations\FindAllCustomersResponse](../../Models/Operations/FindAllCustomersResponse.md)**
-
+* [delete](#delete) - Delete a customer.
 
 ## create
 
@@ -62,7 +25,7 @@ use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -110,9 +73,9 @@ try {
 **[?\kohortpay\sdk\Models\Operations\CreateCustomerResponse](../../Models/Operations/CreateCustomerResponse.md)**
 
 
-## delete
+## findAll
 
-Delete a customer.
+find All customers of an organization.
 
 ### Example Usage
 
@@ -124,17 +87,14 @@ require_once 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
-use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
 try {
-    
-
-    $response = $sdk->customers->delete('string');
+    $response = $sdk->customers->findAll();
 
     if ($response->statusCode === 200) {
         // handle response
@@ -144,16 +104,10 @@ try {
 }
 ```
 
-### Parameters
-
-| Parameter          | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `id`               | *string*           | :heavy_check_mark: | N/A                |
-
 
 ### Response
 
-**[?\kohortpay\sdk\Models\Operations\DeleteCustomerResponse](../../Models/Operations/DeleteCustomerResponse.md)**
+**[?\kohortpay\sdk\Models\Operations\FindAllCustomersResponse](../../Models/Operations/FindAllCustomersResponse.md)**
 
 
 ## findOne
@@ -173,7 +127,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -219,7 +173,7 @@ use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
 $security = new Components\Security();
-$security->bearer = '';
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
 $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
@@ -248,4 +202,50 @@ try {
 ### Response
 
 **[?\kohortpay\sdk\Models\Operations\UpdateCustomerResponse](../../Models/Operations/UpdateCustomerResponse.md)**
+
+
+## delete
+
+Delete a customer.
+
+### Example Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+require_once 'vendor/autoload.php';
+
+use \kohortpay\sdk;
+use \kohortpay\sdk\Models\Components;
+use \kohortpay\sdk\Models\Operations;
+
+$security = new Components\Security();
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
+
+try {
+    
+
+    $response = $sdk->customers->delete('string');
+
+    if ($response->statusCode === 200) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `id`               | *string*           | :heavy_check_mark: | N/A                |
+
+
+### Response
+
+**[?\kohortpay\sdk\Models\Operations\DeleteCustomerResponse](../../Models/Operations/DeleteCustomerResponse.md)**
 

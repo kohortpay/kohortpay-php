@@ -22,56 +22,6 @@ class CheckoutSessions
 	}
 	
     /**
-     * Retrieve all checkout sessions for the current organization and livemode.
-     * 
-     * @return \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse
-     */
-	public function findAll(
-    ): \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse
-    {
-        $baseUrl = $this->sdkConfiguration->getServerUrl();
-        $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions');
-        
-        $options = ['http_errors' => false];
-        $options['headers']['Accept'] = 'application/json';
-        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
-        
-        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
-        
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $statusCode = $httpResponse->getStatusCode();
-
-        $response = new \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse();
-        $response->statusCode = $statusCode;
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        
-        if ($httpResponse->getStatusCode() === 200) {
-        }
-        else if ($httpResponse->getStatusCode() === 400) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->badRequestResponse = $serializer->deserialize((string)$httpResponse->getBody(), 'kohortpay\sdk\Models\Components\BadRequestResponse', 'json');
-            }
-        }
-        else if ($httpResponse->getStatusCode() === 401) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->unauthorizedException = $serializer->deserialize((string)$httpResponse->getBody(), 'kohortpay\sdk\Models\Components\UnauthorizedException', 'json');
-            }
-        }
-        else if ($httpResponse->getStatusCode() === 404) {
-            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
-                $serializer = Utils\JSON::createSerializer();
-                $response->error = $serializer->deserialize((string)$httpResponse->getBody(), 'kohortpay\sdk\Models\Components\Error', 'json');
-            }
-        }
-
-        return $response;
-    }
-	
-    /**
      * Create a new checkout session.
      * 
      * @param \kohortpay\sdk\Models\Components\CreateCheckoutSessionDto $request
@@ -122,6 +72,56 @@ class CheckoutSessions
             if (Utils\Utils::matchContentType($contentType, 'application/json')) {
                 $serializer = Utils\JSON::createSerializer();
                 $response->notFoundException = $serializer->deserialize((string)$httpResponse->getBody(), 'kohortpay\sdk\Models\Components\NotFoundException', 'json');
+            }
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Retrieve all checkout sessions for the current organization and livemode.
+     * 
+     * @return \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse
+     */
+	public function findAll(
+    ): \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse
+    {
+        $baseUrl = $this->sdkConfiguration->getServerUrl();
+        $url = Utils\Utils::generateUrl($baseUrl, '/checkout-sessions');
+        
+        $options = ['http_errors' => false];
+        $options['headers']['Accept'] = 'application/json';
+        $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
+        
+        $httpResponse = $this->sdkConfiguration->securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $statusCode = $httpResponse->getStatusCode();
+
+        $response = new \kohortpay\sdk\Models\Operations\FindAllCheckoutSessionsResponse();
+        $response->statusCode = $statusCode;
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+        }
+        else if ($httpResponse->getStatusCode() === 400) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->badRequestResponse = $serializer->deserialize((string)$httpResponse->getBody(), 'kohortpay\sdk\Models\Components\BadRequestResponse', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->unauthorizedException = $serializer->deserialize((string)$httpResponse->getBody(), 'kohortpay\sdk\Models\Components\UnauthorizedException', 'json');
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 404) {
+            if (Utils\Utils::matchContentType($contentType, 'application/json')) {
+                $serializer = Utils\JSON::createSerializer();
+                $response->error = $serializer->deserialize((string)$httpResponse->getBody(), 'kohortpay\sdk\Models\Components\Error', 'json');
             }
         }
 
