@@ -4,9 +4,9 @@ management:
   docChecksum: 9f87dc911ffff2e713812e38e86254fe
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.2.0
-  configChecksum: d8aa7fdd9cf6b2f853921d9fcee2fd3b
+  generationVersion: 2.237.2
+  releaseVersion: 0.2.1
+  configChecksum: 46e96c91e421fa5d6c8d1bdd0ac5ac44
   repoURL: https://github.com/kohortpay/kohortpay-php.git
   repoSubDirectory: .
   installationURL: https://github.com/kohortpay/kohortpay-php
@@ -15,9 +15,9 @@ features:
   php:
     core: 3.3.0
     flattening: 2.81.1
-    globalSecurity: 2.81.2
+    globalSecurity: 2.81.3
     globalServerURLs: 2.82.1
-    methodSecurity: 2.82.0
+    methodSecurity: 2.82.1
     nameOverrides: 2.81.1
 generatedFiles:
   - src/SDKConfiguration.php
