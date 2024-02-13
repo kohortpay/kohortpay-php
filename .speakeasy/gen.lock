@@ -4,16 +4,16 @@ management:
   docChecksum: 9f87dc911ffff2e713812e38e86254fe
   docVersion: 0.1.0
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 0.2.1
-  configChecksum: 46e96c91e421fa5d6c8d1bdd0ac5ac44
+  generationVersion: 2.253.0
+  releaseVersion: 0.2.2
+  configChecksum: 71430dd8525efe4d110c0b2b01811d76
   repoURL: https://github.com/kohortpay/kohortpay-php.git
   repoSubDirectory: .
   installationURL: https://github.com/kohortpay/kohortpay-php
   published: true
 features:
   php:
-    core: 3.3.0
+    core: 3.3.1
     flattening: 2.81.1
     globalSecurity: 2.81.3
     globalServerURLs: 2.82.1
@@ -29,6 +29,7 @@ generatedFiles:
   - src/KohortPayBuilder.php
   - composer.json
   - phpstan.neon
+  - rector.php
   - src/Utils/EnumHandler.php
   - src/Utils/FormMetadata.php
   - src/Utils/Headers.php

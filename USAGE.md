@@ -28,7 +28,7 @@ try {
     if ($response->createPaymentIntentDto !== null) {
         // handle response
     }
-} catch (Exception $e) {
+} catch (Throwable $e) {
     // handle exception
 }
 
