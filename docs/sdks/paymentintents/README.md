@@ -119,7 +119,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentIntents->findOne('string');
+    $response = $sdk->paymentIntents->findOne('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -165,7 +165,7 @@ try {
     $requestSecurity = new Operations\CancelPaymentIntentSecurity();
     $requestSecurity->bearer = '<YOUR_BEARER_TOKEN_HERE>';
 
-    $response = $sdk->paymentIntents->cancel($requestSecurity, 'string');
+    $response = $sdk->paymentIntents->cancel($requestSecurity, '<value>');
 
     if ($response->statusCode === 200) {
         // handle response

@@ -122,7 +122,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->findOne('string');
+    $response = $sdk->paymentGroups->findOne('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -169,7 +169,7 @@ try {
         $updatePaymentGroupDto = new Components\UpdatePaymentGroupDto();
     $updatePaymentGroupDto->metadata = new Components\UpdatePaymentGroupDtoMetadata();
 
-    $response = $sdk->paymentGroups->update('string', $updatePaymentGroupDto);
+    $response = $sdk->paymentGroups->update('<value>', $updatePaymentGroupDto);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -216,7 +216,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->getParticipants('string');
+    $response = $sdk->paymentGroups->getParticipants('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -262,7 +262,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->cancel('string');
+    $response = $sdk->paymentGroups->cancel('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -308,7 +308,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->paymentGroups->expire('string');
+    $response = $sdk->paymentGroups->expire('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -355,7 +355,7 @@ try {
         $validatePaymentGroupDto = new Components\ValidatePaymentGroupDto();
     $validatePaymentGroupDto->customerEmail = 'customer@gmail.com';
 
-    $response = $sdk->paymentGroups->validatePaymentGroup('string', $validatePaymentGroupDto);
+    $response = $sdk->paymentGroups->validatePaymentGroup('<value>', $validatePaymentGroupDto);
 
     if ($response->statusCode === 200) {
         // handle response

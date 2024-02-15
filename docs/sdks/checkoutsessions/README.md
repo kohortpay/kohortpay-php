@@ -127,7 +127,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->checkoutSessions->findOne('string');
+    $response = $sdk->checkoutSessions->findOne('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -173,7 +173,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->checkoutSessions->expire('string');
+    $response = $sdk->checkoutSessions->expire('<value>');
 
     if ($response->statusCode === 200) {
         // handle response

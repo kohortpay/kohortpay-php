@@ -134,7 +134,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->customers->findOne('string');
+    $response = $sdk->customers->findOne('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -181,7 +181,7 @@ try {
         $updateCustomerDto = new Components\UpdateCustomerDto();
     $updateCustomerDto->deletedAt = DateTime::createFromFormat('Y-m-d\TH:i:s+', '2021-07-22T00:00:00.000Z');
 
-    $response = $sdk->customers->updateCustomer('string', $updateCustomerDto);
+    $response = $sdk->customers->updateCustomer('<value>', $updateCustomerDto);
 
     if ($response->statusCode === 200) {
         // handle response
@@ -228,7 +228,7 @@ $sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 try {
     
 
-    $response = $sdk->customers->delete('string');
+    $response = $sdk->customers->delete('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
