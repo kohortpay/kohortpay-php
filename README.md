@@ -29,7 +29,8 @@ composer require "kohortpay/kohortpay-php"
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use kohortpay\sdk;
 use kohortpay\sdk\Models\Components;

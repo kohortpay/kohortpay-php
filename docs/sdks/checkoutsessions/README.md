@@ -18,7 +18,8 @@ Create a new checkout session.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -76,7 +77,8 @@ Retrieve all checkout sessions for the current organization and livemode.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -113,7 +115,8 @@ Retrieve a checkout session by ID for the current organization and livemode.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -159,7 +162,8 @@ Expire a checkout session by ID for the current organization and livemode.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;

@@ -19,7 +19,8 @@ Create a new customer.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -83,7 +84,8 @@ find All customers of an organization.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -120,7 +122,8 @@ find All customers of an organization.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -166,7 +169,8 @@ Update a customer.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -214,7 +218,8 @@ Delete a customer.
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;

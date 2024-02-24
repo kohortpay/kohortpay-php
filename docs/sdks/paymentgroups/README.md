@@ -22,7 +22,8 @@ Create a new payment group
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -71,7 +72,8 @@ Retrieve all payment groups
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -108,7 +110,8 @@ Retrieve a payment group by id
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -154,7 +157,8 @@ Update a payment group by id
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -202,7 +206,8 @@ Retrieve participants of a payment group by id
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -248,7 +253,8 @@ Cancel a payment group by id
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -294,7 +300,8 @@ Expire a payment group by id
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -340,7 +347,8 @@ Validate a payment group by id
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;

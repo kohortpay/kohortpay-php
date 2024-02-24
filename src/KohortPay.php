@@ -95,8 +95,7 @@ class KohortPay
 	public Customers $customers;
 	
 	public CheckoutSessions $checkoutSessions;
-		
-	private SDKConfiguration $sdkConfiguration;
+	
 
 	/**
 	 * Returns a new instance of the SDK builder used to configure and create the SDK instance.
@@ -111,9 +110,9 @@ class KohortPay
 	/**
 	 * @param SDKConfiguration $sdkConfiguration
 	 */
-	public function __construct(SDKConfiguration $sdkConfiguration)
-	{
-		$this->sdkConfiguration = $sdkConfiguration;
+	public function __construct(
+		private SDKConfiguration $sdkConfiguration,
+	) {
 		
 		$this->paymentIntents = new PaymentIntents($this->sdkConfiguration);
 		

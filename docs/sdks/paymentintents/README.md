@@ -18,7 +18,8 @@ Create a new Payment Intent
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -68,7 +69,8 @@ Retrieve all Payment Intents
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -105,7 +107,8 @@ Retrieve a Payment Intent by ID
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
@@ -151,7 +154,8 @@ Cancel a Payment Intent by ID
 <?php
 
 declare(strict_types=1);
-require_once 'vendor/autoload.php';
+
+require 'vendor/autoload.php';
 
 use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
