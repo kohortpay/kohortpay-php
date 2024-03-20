@@ -161,15 +161,15 @@ use \kohortpay\sdk;
 use \kohortpay\sdk\Models\Components;
 use \kohortpay\sdk\Models\Operations;
 
-$sdk = sdk\KohortPay::builder()->build();
+$security = new Components\Security();
+$security->bearer = '<YOUR_BEARER_TOKEN_HERE>';
+
+$sdk = sdk\KohortPay::builder()->setSecurity($security)->build();
 
 try {
     
 
-    $requestSecurity = new Operations\CancelPaymentIntentSecurity();
-    $requestSecurity->bearer = '<YOUR_BEARER_TOKEN_HERE>';
-
-    $response = $sdk->paymentIntents->cancel($requestSecurity, '<value>');
+    $response = $sdk->paymentIntents->cancel('<value>');
 
     if ($response->statusCode === 200) {
         // handle response
@@ -181,10 +181,9 @@ try {
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                             | [\kohortpay\sdk\Models\Operations\CancelPaymentIntentSecurity](../../Models/Operations/CancelPaymentIntentSecurity.md) | :heavy_check_mark:                                                                                                     | The security requirements to use for the request.                                                                      |
-| `id`                                                                                                                   | *string*                                                                                                               | :heavy_check_mark:                                                                                                     | ID of the Payment Intent to cancel                                                                                     |
+| Parameter                          | Type                               | Required                           | Description                        |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| `id`                               | *string*                           | :heavy_check_mark:                 | ID of the Payment Intent to cancel |
 
 
 ### Response

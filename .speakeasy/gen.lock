@@ -3,10 +3,10 @@ id: 370c4271-69a3-43a6-b1f3-11f58d188263
 management:
   docChecksum: 9f87dc911ffff2e713812e38e86254fe
   docVersion: 0.1.0
-  speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 0.2.4
-  configChecksum: f38952f9efaba8762fc6c4a07f0ba7d2
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.3.0
+  configChecksum: dad6d8dc23d14edb6f772bca6371f959
   repoURL: https://github.com/kohortpay/kohortpay-php.git
   repoSubDirectory: .
   installationURL: https://github.com/kohortpay/kohortpay-php
@@ -15,9 +15,8 @@ features:
   php:
     core: 3.3.3
     flattening: 2.81.1
-    globalSecurity: 2.81.4
+    globalSecurity: 2.81.6
     globalServerURLs: 2.82.1
-    methodSecurity: 2.82.1
     nameOverrides: 2.81.1
 generatedFiles:
   - src/SDKConfiguration.php
@@ -50,7 +49,6 @@ generatedFiles:
   - src/Models/Operations/FindAllPaymentIntentsResponse.php
   - src/Models/Operations/FindOnePaymentIntentRequest.php
   - src/Models/Operations/FindOnePaymentIntentResponse.php
-  - src/Models/Operations/CancelPaymentIntentSecurity.php
   - src/Models/Operations/CancelPaymentIntentRequest.php
   - src/Models/Operations/CancelPaymentIntentResponse.php
   - src/Models/Operations/CreatePaymentGroupResponse.php
@@ -106,7 +104,6 @@ generatedFiles:
   - docs/Models/Operations/FindAllPaymentIntentsResponse.md
   - docs/Models/Operations/FindOnePaymentIntentRequest.md
   - docs/Models/Operations/FindOnePaymentIntentResponse.md
-  - docs/Models/Operations/CancelPaymentIntentSecurity.md
   - docs/Models/Operations/CancelPaymentIntentRequest.md
   - docs/Models/Operations/CancelPaymentIntentResponse.md
   - docs/Models/Operations/CreatePaymentGroupResponse.md

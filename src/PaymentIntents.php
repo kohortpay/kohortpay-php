@@ -138,12 +138,10 @@ class PaymentIntents
     /**
      * Cancel a Payment Intent by ID
      * 
-     * @param \kohortpay\sdk\Models\Operations\CancelPaymentIntentSecurity $security
      * @param string $id
      * @return \kohortpay\sdk\Models\Operations\CancelPaymentIntentResponse
      */
 	public function cancel(
-        \kohortpay\sdk\Models\Operations\CancelPaymentIntentSecurity $security,
         string $id,
     ): \kohortpay\sdk\Models\Operations\CancelPaymentIntentResponse
     {
@@ -157,8 +155,7 @@ class PaymentIntents
         $options['headers']['Accept'] = '*/*';
         $options['headers']['user-agent'] = $this->sdkConfiguration->userAgent;
         
-        $client = Utils\Utils::configureSecurityClient($this->sdkConfiguration->defaultClient, $security);
-        $httpResponse = $client->request('POST', $url, $options);
+        $httpResponse = $this->sdkConfiguration->securityClient->request('POST', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 

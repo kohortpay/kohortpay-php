@@ -129,3 +129,13 @@ Based on:
 - [php v0.2.4] .
 ### Releases
 - [Composer v0.2.4] https://packagist.org/packages/kohortpay/kohortpay-php#v0.2.4 - .
+
+## 2024-03-20 00:09:59
+### Changes
+Based on:
+- OpenAPI Doc 0.1.0 
+- Speakeasy CLI 1.213.0 (2.283.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [php v0.3.0] .
+### Releases
+- [Composer v0.3.0] https://packagist.org/packages/kohortpay/kohortpay-php#v0.3.0 - .
